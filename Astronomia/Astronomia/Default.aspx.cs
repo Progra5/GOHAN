@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using Newtonsoft.Json;
+
 using Astronomia.SRNegocio;
 using System.Data;
 
@@ -21,12 +21,6 @@ namespace Astronomia
             {
                 actualizar();
 
-                StringBuilder html = WSNegocios.crearTablaTipos();
-
-                PlaceHolder1.Controls.Add(new Literal { Text = html.ToString() });//tipo relacion
-                //PlaceHolder2.Controls.Add(new Literal { Text = WSNegocios.crearTablaTipos().ToString() }); // asociados
-                PlaceHolder3.Controls.Add(new Literal { Text = WSNegocios.crearTablaCuerpos().ToString() });//cuerpos celestes
-
                 try
                 {
                     CrearTabla ct = new CrearTabla();
@@ -35,9 +29,14 @@ namespace Astronomia
 
                     DataTable dt = (DataTable)JsonConvert.DeserializeObject(txt, (typeof(DataTable)));
 
-                    StringBuilder ht = new StringBuilder();
+                    string txt2 = WSBaseDatos.consultarTipos();
 
-                    html = ct.crear(dt);
+                    DataTable dt2 = (DataTable)JsonConvert.DeserializeObject(txt2, (typeof(DataTable)));
+
+                    PlaceHolder1.Controls.Add(new Literal { Text = ct.crear(dt2).ToString() });//tipo relacion
+                    //PlaceHolder2.Controls.Add(new Literal { Text = WSNegocios.crearTablaTipos().ToString() }); // asociados
+                    PlaceHolder3.Controls.Add(new Literal { Text = ct.crear(dt2).ToString() });//cuerpos celestes
+
                 }
                 catch (Exception)
                 {
