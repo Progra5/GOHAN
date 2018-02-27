@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-
+using Newtonsoft.Json;
 using Astronomia.SRNegocio;
 using System.Data;
 
@@ -35,7 +35,7 @@ namespace Astronomia
 
                     DataTable dt = (DataTable)JsonConvert.DeserializeObject(txt, (typeof(DataTable)));
 
-                    StringBuilder html = new StringBuilder();
+                    StringBuilder ht = new StringBuilder();
 
                     html = ct.crear(dt);
                 }

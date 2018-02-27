@@ -22,3 +22,5 @@ C:\Users\progra\Desktop\Programacion 5\T2_T4\Final Tarea4\Astronomia\Astronomia\
 C:\Users\progra\Desktop\Programacion 5\T2_T4\Final Tarea4\Astronomia\Astronomia\bin\Astronomia.pdb
 C:\Users\progra\Desktop\Programacion 5\T2_T4\Final Tarea4\Astronomia\Astronomia\obj\Debug\Astronomia.dll
 C:\Users\progra\Desktop\Programacion 5\T2_T4\Final Tarea4\Astronomia\Astronomia\obj\Debug\Astronomia.pdb
+C:\Users\Kevin\Documents\GitHub\GOHAN\Astronomia\Astronomia\obj\Debug\Astronomia.csprojResolveAssemblyReference.cache
+C:\Users\Kevin\Documents\GitHub\GOHAN\Astronomia\Astronomia\obj\Debug\Astronomia.dll
