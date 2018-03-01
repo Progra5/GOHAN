@@ -27,3 +27,11 @@ C:\Users\progra\Desktop\GOHAN\WSNegocio\WSNegocio\bin\Newtonsoft.Json.xml
 C:\Users\progra\Desktop\GOHAN\WSNegocio\WSNegocio\obj\Debug\WSNegocio.csprojResolveAssemblyReference.cache
 C:\Users\progra\Desktop\GOHAN\WSNegocio\WSNegocio\obj\Debug\WSNegocio.dll
 C:\Users\progra\Desktop\GOHAN\WSNegocio\WSNegocio\obj\Debug\WSNegocio.pdb
+C:\Users\Kevin\Documents\GitHub\GOHAN\WSNegocio\WSNegocio\bin\WSNegocio.dll.config
+C:\Users\Kevin\Documents\GitHub\GOHAN\WSNegocio\WSNegocio\bin\WSNegocio.dll
+C:\Users\Kevin\Documents\GitHub\GOHAN\WSNegocio\WSNegocio\bin\WSNegocio.pdb
+C:\Users\Kevin\Documents\GitHub\GOHAN\WSNegocio\WSNegocio\bin\Newtonsoft.Json.dll
+C:\Users\Kevin\Documents\GitHub\GOHAN\WSNegocio\WSNegocio\bin\Newtonsoft.Json.xml
+C:\Users\Kevin\Documents\GitHub\GOHAN\WSNegocio\WSNegocio\obj\Debug\WSNegocio.csprojResolveAssemblyReference.cache
+C:\Users\Kevin\Documents\GitHub\GOHAN\WSNegocio\WSNegocio\obj\Debug\WSNegocio.dll
+C:\Users\Kevin\Documents\GitHub\GOHAN\WSNegocio\WSNegocio\obj\Debug\WSNegocio.pdb

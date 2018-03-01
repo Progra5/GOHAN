@@ -30,3 +30,11 @@ C:\Users\progra\Desktop\GOHAN\Astronomia\Astronomia\bin\Newtonsoft.Json.xml
 C:\Users\progra\Desktop\GOHAN\Astronomia\Astronomia\obj\Debug\Astronomia.csprojResolveAssemblyReference.cache
 C:\Users\progra\Desktop\GOHAN\Astronomia\Astronomia\obj\Debug\Astronomia.dll
 C:\Users\progra\Desktop\GOHAN\Astronomia\Astronomia\obj\Debug\Astronomia.pdb
+C:\Users\Kevin\Documents\GitHub\GOHAN\Astronomia\Astronomia\bin\Astronomia.dll.config
+C:\Users\Kevin\Documents\GitHub\GOHAN\Astronomia\Astronomia\bin\Astronomia.dll
+C:\Users\Kevin\Documents\GitHub\GOHAN\Astronomia\Astronomia\bin\Astronomia.pdb
+C:\Users\Kevin\Documents\GitHub\GOHAN\Astronomia\Astronomia\bin\Newtonsoft.Json.dll
+C:\Users\Kevin\Documents\GitHub\GOHAN\Astronomia\Astronomia\bin\Newtonsoft.Json.xml
+C:\Users\Kevin\Documents\GitHub\GOHAN\Astronomia\Astronomia\obj\Debug\Astronomia.csprojResolveAssemblyReference.cache
+C:\Users\Kevin\Documents\GitHub\GOHAN\Astronomia\Astronomia\obj\Debug\Astronomia.dll
+C:\Users\Kevin\Documents\GitHub\GOHAN\Astronomia\Astronomia\obj\Debug\Astronomia.pdb
