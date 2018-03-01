@@ -100,7 +100,7 @@
                                     <br />
                                     <br />
                                     <asp:Button ID="cargarImagen" runat="server"
-                                        Text="Cargar imágenes" OnClick="cargarImagenes_Click" style="margin-left: 93px" />
+                                        Text="Guargar" OnClick="cargarImagenes_Click" style="margin-left: 93px" />
                                     <br />
                                     <br />
                                     <asp:Label ID="Label2" runat="server" Text="Label"></asp:Label>
