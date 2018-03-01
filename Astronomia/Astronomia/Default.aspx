@@ -11,28 +11,36 @@
             width: 380px;
             height: 26px;
         }
+
         .auto-style6 {
             width: 332px;
         }
+
         .auto-style16 {
             width: 203px;
         }
+
         .auto-style18 {
             width: 164px;
             height: 26px;
         }
+
         #tabla {
             margin-left: 416px;
         }
+
         .auto-style21 {
             width: 164px;
         }
+
         .auto-style23 {
             width: 380px;
         }
+
         .auto-style24 {
             width: 176px;
         }
+
         .auto-style25 {
             width: 270px;
         }
@@ -65,7 +73,7 @@
                             Registro de cuerpos celestes
                         </h3>
                         <div><p><br /></p></div>
-                        <table style="margin-left: 380px">
+                        <table style="margin-left: 600px">
                             <tr>
                                 <td align="right" class="auto-style18">Nombre: </td>
                                 <td class="auto-style4" align="left">
@@ -92,15 +100,22 @@
                                     <br />
                                     <asp:Button ID="cargarImagen" runat="server"
                                         Text="Cargar imágenes" OnClick="cargarImagenes_Click" style="margin-left: 93px" />
+                                    <br />
+                                    <br />
                                     <asp:Label ID="Label2" runat="server" Text="Label"></asp:Label>
                                 </td>
                             </tr>
                         </table>
 
                     </div>
-                    <asp:Panel ID="Panel1" runat="server" Width="1000px" Height="500px" ScrollBars="Vertical">
+                    <div class="col-sm-12">
+                        <br />
+                        <br />
+                        <br />
+                    <asp:Panel ID="Panel1" runat="server" Height="1000px" ScrollBars="Vertical" HorizontalAlign="Center">
                         <asp:PlaceHolder ID="PlaceHolder3" runat="server"></asp:PlaceHolder>
                     </asp:Panel>
+                        </div>
                 </asp:View>
                 <asp:View ID="View2" runat="server">
                 
@@ -110,7 +125,7 @@
                             <h3 class="header blue lighter smaller">Asociar cuerpos celestes </h3>
                         <p class="header blue lighter smaller">
                             &nbsp;</p>
-                            <table id="tabla">
+                            <table style="margin-left: 600px">
                                 <tr>
                                     <td align="right" class="auto-style16">Cuerpos celestes</td>
                                     <td class="auto-style6">
@@ -138,15 +153,17 @@
                                 <tr>
                                     <td colspan="2">
                                         <br />
-                                        <asp:Label ID="Label3" runat="server" Text="Label"></asp:Label>
+                                        <asp:Label ID="Label3" runat="server" Text="Estado"></asp:Label>
                                         <br />
                                         <asp:Button ID="btnAsociar" runat="server" Text="Asociar" OnClick="btnAsociar_Click" /></td>
                                 </tr>
                             </table>
                         </div>
-                    <asp:Panel ID="Panel2" runat="server" Width="1000px" Height="500px" ScrollBars="Vertical">
+                    <div class="col-sm-12">
+                    <asp:Panel ID="Panel2" runat="server" Height="500px" ScrollBars="Vertical" HorizontalAlign="Center">
                         <asp:PlaceHolder ID="PlaceHolder2" runat="server"></asp:PlaceHolder>
                     </asp:Panel>
+                        </div>
 
                 </asp:View>
                 <asp:View ID="View3" runat="server">
@@ -154,10 +171,10 @@
                         <h3 class="header blue lighter smaller">
                             &nbsp;</h3>
                         
-                            <h3 class="header blue lighter smaller">Asociar cuerpos celestes</h3>
+                            <h3 class="header blue lighter smaller">Insertar tipo relaci&oacute;n</h3>
                         <h3 class="header blue lighter smaller">&nbsp;</h3>
                         
-                            <table style="text-align:right; margin-left: 414px;">
+                            <table style="margin-left: 600px">
                                 <tr>
                                     <td class="auto-style24">Insertar tipo de relaci&oacute;n</td>
                                     <td class="auto-style25"><asp:TextBox ID="txtTipoRelacion" runat="server"></asp:TextBox>
@@ -167,12 +184,17 @@
                                 </tr>
                                 <tr>
                                     <td colspan="2"><asp:Button ID="btnInsertarTipo" runat="server" Text="Insertar" OnClick="btnInsertarTipo_Click" />
-                                        <asp:Label ID="Label4" runat="server" Text="Label"></asp:Label>
+                                        <br />
+                                        <br />
+                                        <asp:Label ID="Label4" runat="server" Text="Estado"></asp:Label>
+                                        <br />
                                         <br />
                                     </td>
                                 </tr>
                             </table>
-                        <asp:Panel ID="Panel3" runat="server" Width="1000px" Height="500px" ScrollBars="Vertical">
+                        </div>
+                    <div class="col-sm-12">
+                        <asp:Panel ID="Panel3" runat="server" Height="500px" ScrollBars="Vertical" HorizontalAlign="Center" >
                             <asp:PlaceHolder ID="PlaceHolder1" runat="server"></asp:PlaceHolder>
                         </asp:Panel>
                         </div>

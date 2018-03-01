@@ -7,7 +7,7 @@
           <s:sequence>
             <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="descubridor" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="archivos" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="archivos" type="s:base64Binary" />
           </s:sequence>
         </s:complexType>
       </s:element>

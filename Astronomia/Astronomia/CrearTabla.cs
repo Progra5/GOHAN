@@ -23,7 +23,7 @@ namespace Astronomia
                 html.Append("<tr>");
                 foreach (DataColumn column in dt.Columns)
                 {
-                    html.Append("<th style='text-align:center'>");
+                    html.Append("<th style='text-align:center' Width='200px'>");
                     html.Append(column.ColumnName);
                     html.Append("</th>");
                 }

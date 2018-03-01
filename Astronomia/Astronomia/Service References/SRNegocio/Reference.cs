@@ -156,12 +156,12 @@ namespace Astronomia.SRNegocio {
         public string descubridor;
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
-        public string archivos;
+        public byte[] archivos;
         
         public CuerpoCelesteRequestBody() {
         }
         
-        public CuerpoCelesteRequestBody(string nombre, string descubridor, string archivos) {
+        public CuerpoCelesteRequestBody(string nombre, string descubridor, byte[] archivos) {
             this.nombre = nombre;
             this.descubridor = descubridor;
             this.archivos = archivos;
@@ -622,7 +622,7 @@ namespace Astronomia.SRNegocio {
             return base.Channel.CuerpoCeleste(request);
         }
         
-        public string CuerpoCeleste(string nombre, string descubridor, string archivos) {
+        public string CuerpoCeleste(string nombre, string descubridor, byte[] archivos) {
             Astronomia.SRNegocio.CuerpoCelesteRequest inValue = new Astronomia.SRNegocio.CuerpoCelesteRequest();
             inValue.Body = new Astronomia.SRNegocio.CuerpoCelesteRequestBody();
             inValue.Body.nombre = nombre;
@@ -637,7 +637,7 @@ namespace Astronomia.SRNegocio {
             return base.Channel.CuerpoCelesteAsync(request);
         }
         
-        public System.Threading.Tasks.Task<Astronomia.SRNegocio.CuerpoCelesteResponse> CuerpoCelesteAsync(string nombre, string descubridor, string archivos) {
+        public System.Threading.Tasks.Task<Astronomia.SRNegocio.CuerpoCelesteResponse> CuerpoCelesteAsync(string nombre, string descubridor, byte[] archivos) {
             Astronomia.SRNegocio.CuerpoCelesteRequest inValue = new Astronomia.SRNegocio.CuerpoCelesteRequest();
             inValue.Body = new Astronomia.SRNegocio.CuerpoCelesteRequestBody();
             inValue.Body.nombre = nombre;

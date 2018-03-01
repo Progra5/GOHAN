@@ -4,9 +4,11 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using Newtonsoft.Json;
+
 using Astronomia.SRNegocio;
 using System.Data;
+using Newtonsoft.Json;
+using System.Text;
 
 namespace Astronomia
 {
@@ -20,29 +22,8 @@ namespace Astronomia
             if (!IsPostBack)
             {
                 actualizar();
-
-                try
-                {
-                    CrearTabla ct = new CrearTabla();
-
-                    string txt = WSBaseDatos.consultarTotalCuerpos();
-
-                    DataTable dt = (DataTable)JsonConvert.DeserializeObject(txt, (typeof(DataTable)));
-
-                    string txt2 = WSBaseDatos.consultarTipos();
-
-                    DataTable dt2 = (DataTable)JsonConvert.DeserializeObject(txt2, (typeof(DataTable)));
-
-                    PlaceHolder1.Controls.Add(new Literal { Text = ct.crear(dt2).ToString() });//tipo relacion
-                    //PlaceHolder2.Controls.Add(new Literal { Text = WSNegocios.crearTablaTipos().ToString() }); // asociados
-                    PlaceHolder3.Controls.Add(new Literal { Text = ct.crear(dt2).ToString() });//cuerpos celestes
-
-                }
-                catch (Exception)
-                {
-                }
-
             }
+            actualizar2();
             
         }
 
@@ -69,9 +50,10 @@ namespace Astronomia
                 {
                     string nombre = fileUploader1.FileName;
 
-                    string salida = WSNegocios.CuerpoCeleste(txtnombre.Text, txtDescubridor.Text, nombre);
+                    string salida = WSNegocios.CuerpoCeleste(txtnombre.Text, txtDescubridor.Text, Encoding.UTF8.GetBytes(nombre));
 
                     Label1.Text = salida;
+                    actualizar();
                 }
             }
             catch (Exception ex)
@@ -99,6 +81,8 @@ namespace Astronomia
                 string salida = WSNegocios.asociar(Convert.ToInt32(ddlCuerposCelestes1.SelectedValue), Convert.ToInt32(ddlCuerposCelestes2.SelectedValue), Convert.ToInt32(ddlTipoRelacion.SelectedValue));
 
                 Label3.Text = salida;
+                actualizar();
+                actualizar2();
             }
             catch (Exception ex)
             {
@@ -113,6 +97,9 @@ namespace Astronomia
                 string salida = WSNegocios.insertarTipo(txtTipoRelacion.Text);
 
                 Label4.Text = salida;
+
+                actualizar();
+                actualizar2();
             }
             catch (Exception ex)
             {
@@ -156,6 +143,32 @@ namespace Astronomia
                     ddlTipoRelacion.Items.Add(vect2[1].ToString());
                     ddlTipoRelacion.Items[j].Value = vect2[0].ToString();
                 }
+            }
+        }
+        public void actualizar2()
+        {
+            try
+            {
+                CrearTabla ct = new CrearTabla();
+
+                string txt = WSBaseDatos.consultarTotalCuerpos();
+
+                DataTable dt = (DataTable)JsonConvert.DeserializeObject(txt, (typeof(DataTable)));
+
+                string txt2 = WSBaseDatos.consultarTipos();
+
+                DataTable dt2 = (DataTable)JsonConvert.DeserializeObject(txt2, (typeof(DataTable)));
+
+                PlaceHolder1.Controls.Clear();
+                PlaceHolder1.Controls.Clear();
+                PlaceHolder1.Controls.Clear();
+                PlaceHolder1.Controls.Add(new Literal { Text = ct.crear(dt2).ToString() });//tipo relacion
+                //PlaceHolder2.Controls.Add(new Literal { Text = WSNegocios.crearTablaTipos().ToString() }); // asociados
+                PlaceHolder3.Controls.Add(new Literal { Text = ct.crear(dt).ToString() });//cuerpos celestes
+
+            }
+            catch (Exception)
+            {
             }
         }
     }
