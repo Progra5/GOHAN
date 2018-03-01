@@ -39,7 +39,11 @@ namespace WSBaseDatos
                 using (SqlConnection cn = new SqlConnection(Conexion))
                 {
                     cn.Open();
+<<<<<<< HEAD
                     SqlCommand cmd = new SqlCommand("INRCUE", cn);
+=======
+                    SqlCommand cmd = new SqlCommand("INSCUE", cn);
+>>>>>>> 4af0dbc78b958ad9033bc73576daddfe81805790
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@_Nombre", nombre);
                     cmd.Parameters.AddWithValue("@_Descubridor", descubridor);

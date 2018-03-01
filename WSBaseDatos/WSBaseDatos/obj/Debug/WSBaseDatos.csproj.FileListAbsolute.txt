@@ -20,6 +20,7 @@ C:\Users\progra\Desktop\Programacion 5\T2_T4\Final Tarea4\WSBaseDatos\WSBaseDato
 C:\Users\progra\Desktop\Programacion 5\T2_T4\Final Tarea4\WSBaseDatos\WSBaseDatos\obj\Debug\WSBaseDatos.csprojResolveAssemblyReference.cache
 C:\Users\progra\Desktop\Programacion 5\T2_T4\Final Tarea4\WSBaseDatos\WSBaseDatos\obj\Debug\WSBaseDatos.dll
 C:\Users\progra\Desktop\Programacion 5\T2_T4\Final Tarea4\WSBaseDatos\WSBaseDatos\obj\Debug\WSBaseDatos.pdb
+<<<<<<< HEAD
 C:\Users\Kevin\Documents\GitHub\GOHAN\WSBaseDatos\WSBaseDatos\bin\WSBaseDatos.dll.config
 C:\Users\Kevin\Documents\GitHub\GOHAN\WSBaseDatos\WSBaseDatos\bin\WSBaseDatos.dll
 C:\Users\Kevin\Documents\GitHub\GOHAN\WSBaseDatos\WSBaseDatos\bin\WSBaseDatos.pdb
@@ -28,3 +29,13 @@ C:\Users\Kevin\Documents\GitHub\GOHAN\WSBaseDatos\WSBaseDatos\bin\Newtonsoft.Jso
 C:\Users\Kevin\Documents\GitHub\GOHAN\WSBaseDatos\WSBaseDatos\obj\Debug\WSBaseDatos.csprojResolveAssemblyReference.cache
 C:\Users\Kevin\Documents\GitHub\GOHAN\WSBaseDatos\WSBaseDatos\obj\Debug\WSBaseDatos.dll
 C:\Users\Kevin\Documents\GitHub\GOHAN\WSBaseDatos\WSBaseDatos\obj\Debug\WSBaseDatos.pdb
+=======
+C:\Users\progra\Desktop\GOHAN\WSBaseDatos\WSBaseDatos\bin\WSBaseDatos.dll.config
+C:\Users\progra\Desktop\GOHAN\WSBaseDatos\WSBaseDatos\bin\WSBaseDatos.dll
+C:\Users\progra\Desktop\GOHAN\WSBaseDatos\WSBaseDatos\bin\WSBaseDatos.pdb
+C:\Users\progra\Desktop\GOHAN\WSBaseDatos\WSBaseDatos\bin\Newtonsoft.Json.dll
+C:\Users\progra\Desktop\GOHAN\WSBaseDatos\WSBaseDatos\bin\Newtonsoft.Json.xml
+C:\Users\progra\Desktop\GOHAN\WSBaseDatos\WSBaseDatos\obj\Debug\WSBaseDatos.csprojResolveAssemblyReference.cache
+C:\Users\progra\Desktop\GOHAN\WSBaseDatos\WSBaseDatos\obj\Debug\WSBaseDatos.dll
+C:\Users\progra\Desktop\GOHAN\WSBaseDatos\WSBaseDatos\obj\Debug\WSBaseDatos.pdb
+>>>>>>> 4af0dbc78b958ad9033bc73576daddfe81805790
