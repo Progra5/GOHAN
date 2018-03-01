@@ -23,13 +23,13 @@ namespace WSNegocio
     public class Negocios : System.Web.Services.WebService
     {
         [WebMethod]
-        public string CuerpoCeleste(string nombre, string descubridor, string archivos)
+        public string CuerpoCeleste(string nombre, string descubridor, byte[] archivos)
         {
             try
             {
                 WSNegocio.SRBaseDatos.BaseDatosSoapClient WSBaseDatos = new WSNegocio.SRBaseDatos.BaseDatosSoapClient();
 
-                string resultado = WSBaseDatos.InsertarCuerpo(nombre, descubridor, Encoding.UTF8.GetBytes(archivos));
+                string resultado = WSBaseDatos.InsertarCuerpo(nombre, descubridor, archivos);
 
                 return resultado;
             }

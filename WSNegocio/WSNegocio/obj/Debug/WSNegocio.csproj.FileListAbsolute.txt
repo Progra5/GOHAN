@@ -19,3 +19,11 @@ C:\Users\progra\Desktop\Programacion 5\T2_T4\Final Tarea4\WSNegocio\WSNegocio\bi
 C:\Users\progra\Desktop\Programacion 5\T2_T4\Final Tarea4\WSNegocio\WSNegocio\obj\Debug\WSNegocio.csprojResolveAssemblyReference.cache
 C:\Users\progra\Desktop\Programacion 5\T2_T4\Final Tarea4\WSNegocio\WSNegocio\obj\Debug\WSNegocio.dll
 C:\Users\progra\Desktop\Programacion 5\T2_T4\Final Tarea4\WSNegocio\WSNegocio\obj\Debug\WSNegocio.pdb
+C:\Users\progra\Desktop\GOHAN\WSNegocio\WSNegocio\bin\WSNegocio.dll.config
+C:\Users\progra\Desktop\GOHAN\WSNegocio\WSNegocio\bin\WSNegocio.dll
+C:\Users\progra\Desktop\GOHAN\WSNegocio\WSNegocio\bin\WSNegocio.pdb
+C:\Users\progra\Desktop\GOHAN\WSNegocio\WSNegocio\bin\Newtonsoft.Json.dll
+C:\Users\progra\Desktop\GOHAN\WSNegocio\WSNegocio\bin\Newtonsoft.Json.xml
+C:\Users\progra\Desktop\GOHAN\WSNegocio\WSNegocio\obj\Debug\WSNegocio.csprojResolveAssemblyReference.cache
+C:\Users\progra\Desktop\GOHAN\WSNegocio\WSNegocio\obj\Debug\WSNegocio.dll
+C:\Users\progra\Desktop\GOHAN\WSNegocio\WSNegocio\obj\Debug\WSNegocio.pdb
