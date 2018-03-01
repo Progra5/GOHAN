@@ -23,13 +23,26 @@ namespace WSNegocio
     public class Negocios : System.Web.Services.WebService
     {
         [WebMethod]
-        public string CuerpoCeleste(string nombre, string descubridor, byte[] archivos)
+        public string CuerpoCeleste(string nombre, string descubridor, string archivo)
         {
             try
             {
+                DataTable dt = new DataTable();
+                dt.Columns.Add("nombre");
+                dt.Columns.Add("descubridor");
+                dt.Columns.Add("archivo");
+
+                DataRow row = dt.NewRow();
+                row["nombre"] = nombre;
+                row["descubridor"] = descubridor;
+                row["archivo"] = archivo;
+                dt.Rows.Add(row);
+
+                string txt = Newtonsoft.Json.JsonConvert.SerializeObject(dt);
+
                 WSNegocio.SRBaseDatos.BaseDatosSoapClient WSBaseDatos = new WSNegocio.SRBaseDatos.BaseDatosSoapClient();
 
-                string resultado = WSBaseDatos.InsertarCuerpo(nombre, descubridor, archivos);
+                string resultado = WSBaseDatos.InsertarCuerpo(txt);
 
                 return resultado;
             }
@@ -44,9 +57,22 @@ namespace WSNegocio
         {
             try
             {
+                DataTable dt = new DataTable();
+                dt.Columns.Add("idAsociado");
+                dt.Columns.Add("idCuerpo");
+                dt.Columns.Add("idTipo");
+
+                DataRow row = dt.NewRow();
+                row["idAsociado"] = idAsociado.ToString();
+                row["idCuerpo"] = idCuerpo.ToString();
+                row["idTipo"] = idTipo.ToString();
+                dt.Rows.Add(row);
+
+                string txt = Newtonsoft.Json.JsonConvert.SerializeObject(dt);
+
                 WSNegocio.SRBaseDatos.BaseDatosSoapClient WSBaseDatos = new WSNegocio.SRBaseDatos.BaseDatosSoapClient();
 
-                string salida = WSBaseDatos.InsertarAsociados(idCuerpo, idAsociado, idTipo);
+                string salida = WSBaseDatos.InsertarAsociados(txt);
 
                 return "Los datos se guardaron correctamente";
             }
@@ -61,9 +87,18 @@ namespace WSNegocio
         {
             try
             {
+                DataTable dt = new DataTable();
+                dt.Columns.Add("descripcion");
+
+                DataRow row = dt.NewRow();
+                row["descripcion"] = descripcion;
+                dt.Rows.Add(row);
+
+                string txt = Newtonsoft.Json.JsonConvert.SerializeObject(dt);
+                
                 WSNegocio.SRBaseDatos.BaseDatosSoapClient WSBaseDatos = new WSNegocio.SRBaseDatos.BaseDatosSoapClient();
 
-                string salida = WSBaseDatos.insertarTipo(descripcion);
+                string salida = WSBaseDatos.insertarTipo(txt);
 
                 if (salida == "" || salida == " " || salida == null)
                 {

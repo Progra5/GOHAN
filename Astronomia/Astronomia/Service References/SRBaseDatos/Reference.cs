@@ -22,7 +22,7 @@ namespace Astronomia.SRBaseDatos {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/HelloWorld", ReplyAction="*")]
         System.Threading.Tasks.Task<Astronomia.SRBaseDatos.HelloWorldResponse> HelloWorldAsync(Astronomia.SRBaseDatos.HelloWorldRequest request);
         
-        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento nombre del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento datos del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/InsertarCuerpo", ReplyAction="*")]
         Astronomia.SRBaseDatos.InsertarCuerpoResponse InsertarCuerpo(Astronomia.SRBaseDatos.InsertarCuerpoRequest request);
         
@@ -50,7 +50,7 @@ namespace Astronomia.SRBaseDatos {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/consultarTipos", ReplyAction="*")]
         System.Threading.Tasks.Task<Astronomia.SRBaseDatos.consultarTiposResponse> consultarTiposAsync(Astronomia.SRBaseDatos.consultarTiposRequest request);
         
-        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento InsertarAsociadosResult del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento datos del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/InsertarAsociados", ReplyAction="*")]
         Astronomia.SRBaseDatos.InsertarAsociadosResponse InsertarAsociados(Astronomia.SRBaseDatos.InsertarAsociadosRequest request);
         
@@ -63,6 +63,13 @@ namespace Astronomia.SRBaseDatos {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/consultarTotalCuerpos", ReplyAction="*")]
         System.Threading.Tasks.Task<Astronomia.SRBaseDatos.consultarTotalCuerposResponse> consultarTotalCuerposAsync(Astronomia.SRBaseDatos.consultarTotalCuerposRequest request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento consultarAsociadosResult del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/consultarAsociados", ReplyAction="*")]
+        Astronomia.SRBaseDatos.consultarAsociadosResponse consultarAsociados(Astronomia.SRBaseDatos.consultarAsociadosRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/consultarAsociados", ReplyAction="*")]
+        System.Threading.Tasks.Task<Astronomia.SRBaseDatos.consultarAsociadosResponse> consultarAsociadosAsync(Astronomia.SRBaseDatos.consultarAsociadosRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -150,21 +157,13 @@ namespace Astronomia.SRBaseDatos {
     public partial class InsertarCuerpoRequestBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public string nombre;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
-        public string descubridor;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
-        public byte[] archivo;
+        public string datos;
         
         public InsertarCuerpoRequestBody() {
         }
         
-        public InsertarCuerpoRequestBody(string nombre, string descubridor, byte[] archivo) {
-            this.nombre = nombre;
-            this.descubridor = descubridor;
-            this.archivo = archivo;
+        public InsertarCuerpoRequestBody(string datos) {
+            this.datos = datos;
         }
     }
     
@@ -415,22 +414,14 @@ namespace Astronomia.SRBaseDatos {
     [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
     public partial class InsertarAsociadosRequestBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
-        public int idCuerpo;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
-        public int idAsociado;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
-        public int idtipo;
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string datos;
         
         public InsertarAsociadosRequestBody() {
         }
         
-        public InsertarAsociadosRequestBody(int idCuerpo, int idAsociado, int idtipo) {
-            this.idCuerpo = idCuerpo;
-            this.idAsociado = idAsociado;
-            this.idtipo = idtipo;
+        public InsertarAsociadosRequestBody(string datos) {
+            this.datos = datos;
         }
     }
     
@@ -529,6 +520,67 @@ namespace Astronomia.SRBaseDatos {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class consultarAsociadosRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="consultarAsociados", Namespace="http://tempuri.org/", Order=0)]
+        public Astronomia.SRBaseDatos.consultarAsociadosRequestBody Body;
+        
+        public consultarAsociadosRequest() {
+        }
+        
+        public consultarAsociadosRequest(Astronomia.SRBaseDatos.consultarAsociadosRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class consultarAsociadosRequestBody {
+        
+        public consultarAsociadosRequestBody() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class consultarAsociadosResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="consultarAsociadosResponse", Namespace="http://tempuri.org/", Order=0)]
+        public Astronomia.SRBaseDatos.consultarAsociadosResponseBody Body;
+        
+        public consultarAsociadosResponse() {
+        }
+        
+        public consultarAsociadosResponse(Astronomia.SRBaseDatos.consultarAsociadosResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class consultarAsociadosResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string consultarAsociadosResult;
+        
+        public consultarAsociadosResponseBody() {
+        }
+        
+        public consultarAsociadosResponseBody(string consultarAsociadosResult) {
+            this.consultarAsociadosResult = consultarAsociadosResult;
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface BaseDatosSoapChannel : Astronomia.SRBaseDatos.BaseDatosSoap, System.ServiceModel.IClientChannel {
     }
@@ -584,12 +636,10 @@ namespace Astronomia.SRBaseDatos {
             return base.Channel.InsertarCuerpo(request);
         }
         
-        public string InsertarCuerpo(string nombre, string descubridor, byte[] archivo) {
+        public string InsertarCuerpo(string datos) {
             Astronomia.SRBaseDatos.InsertarCuerpoRequest inValue = new Astronomia.SRBaseDatos.InsertarCuerpoRequest();
             inValue.Body = new Astronomia.SRBaseDatos.InsertarCuerpoRequestBody();
-            inValue.Body.nombre = nombre;
-            inValue.Body.descubridor = descubridor;
-            inValue.Body.archivo = archivo;
+            inValue.Body.datos = datos;
             Astronomia.SRBaseDatos.InsertarCuerpoResponse retVal = ((Astronomia.SRBaseDatos.BaseDatosSoap)(this)).InsertarCuerpo(inValue);
             return retVal.Body.InsertarCuerpoResult;
         }
@@ -599,12 +649,10 @@ namespace Astronomia.SRBaseDatos {
             return base.Channel.InsertarCuerpoAsync(request);
         }
         
-        public System.Threading.Tasks.Task<Astronomia.SRBaseDatos.InsertarCuerpoResponse> InsertarCuerpoAsync(string nombre, string descubridor, byte[] archivo) {
+        public System.Threading.Tasks.Task<Astronomia.SRBaseDatos.InsertarCuerpoResponse> InsertarCuerpoAsync(string datos) {
             Astronomia.SRBaseDatos.InsertarCuerpoRequest inValue = new Astronomia.SRBaseDatos.InsertarCuerpoRequest();
             inValue.Body = new Astronomia.SRBaseDatos.InsertarCuerpoRequestBody();
-            inValue.Body.nombre = nombre;
-            inValue.Body.descubridor = descubridor;
-            inValue.Body.archivo = archivo;
+            inValue.Body.datos = datos;
             return ((Astronomia.SRBaseDatos.BaseDatosSoap)(this)).InsertarCuerpoAsync(inValue);
         }
         
@@ -684,12 +732,10 @@ namespace Astronomia.SRBaseDatos {
             return base.Channel.InsertarAsociados(request);
         }
         
-        public string InsertarAsociados(int idCuerpo, int idAsociado, int idtipo) {
+        public string InsertarAsociados(string datos) {
             Astronomia.SRBaseDatos.InsertarAsociadosRequest inValue = new Astronomia.SRBaseDatos.InsertarAsociadosRequest();
             inValue.Body = new Astronomia.SRBaseDatos.InsertarAsociadosRequestBody();
-            inValue.Body.idCuerpo = idCuerpo;
-            inValue.Body.idAsociado = idAsociado;
-            inValue.Body.idtipo = idtipo;
+            inValue.Body.datos = datos;
             Astronomia.SRBaseDatos.InsertarAsociadosResponse retVal = ((Astronomia.SRBaseDatos.BaseDatosSoap)(this)).InsertarAsociados(inValue);
             return retVal.Body.InsertarAsociadosResult;
         }
@@ -699,12 +745,10 @@ namespace Astronomia.SRBaseDatos {
             return base.Channel.InsertarAsociadosAsync(request);
         }
         
-        public System.Threading.Tasks.Task<Astronomia.SRBaseDatos.InsertarAsociadosResponse> InsertarAsociadosAsync(int idCuerpo, int idAsociado, int idtipo) {
+        public System.Threading.Tasks.Task<Astronomia.SRBaseDatos.InsertarAsociadosResponse> InsertarAsociadosAsync(string datos) {
             Astronomia.SRBaseDatos.InsertarAsociadosRequest inValue = new Astronomia.SRBaseDatos.InsertarAsociadosRequest();
             inValue.Body = new Astronomia.SRBaseDatos.InsertarAsociadosRequestBody();
-            inValue.Body.idCuerpo = idCuerpo;
-            inValue.Body.idAsociado = idAsociado;
-            inValue.Body.idtipo = idtipo;
+            inValue.Body.datos = datos;
             return ((Astronomia.SRBaseDatos.BaseDatosSoap)(this)).InsertarAsociadosAsync(inValue);
         }
         
@@ -729,6 +773,29 @@ namespace Astronomia.SRBaseDatos {
             Astronomia.SRBaseDatos.consultarTotalCuerposRequest inValue = new Astronomia.SRBaseDatos.consultarTotalCuerposRequest();
             inValue.Body = new Astronomia.SRBaseDatos.consultarTotalCuerposRequestBody();
             return ((Astronomia.SRBaseDatos.BaseDatosSoap)(this)).consultarTotalCuerposAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Astronomia.SRBaseDatos.consultarAsociadosResponse Astronomia.SRBaseDatos.BaseDatosSoap.consultarAsociados(Astronomia.SRBaseDatos.consultarAsociadosRequest request) {
+            return base.Channel.consultarAsociados(request);
+        }
+        
+        public string consultarAsociados() {
+            Astronomia.SRBaseDatos.consultarAsociadosRequest inValue = new Astronomia.SRBaseDatos.consultarAsociadosRequest();
+            inValue.Body = new Astronomia.SRBaseDatos.consultarAsociadosRequestBody();
+            Astronomia.SRBaseDatos.consultarAsociadosResponse retVal = ((Astronomia.SRBaseDatos.BaseDatosSoap)(this)).consultarAsociados(inValue);
+            return retVal.Body.consultarAsociadosResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<Astronomia.SRBaseDatos.consultarAsociadosResponse> Astronomia.SRBaseDatos.BaseDatosSoap.consultarAsociadosAsync(Astronomia.SRBaseDatos.consultarAsociadosRequest request) {
+            return base.Channel.consultarAsociadosAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<Astronomia.SRBaseDatos.consultarAsociadosResponse> consultarAsociadosAsync() {
+            Astronomia.SRBaseDatos.consultarAsociadosRequest inValue = new Astronomia.SRBaseDatos.consultarAsociadosRequest();
+            inValue.Body = new Astronomia.SRBaseDatos.consultarAsociadosRequestBody();
+            return ((Astronomia.SRBaseDatos.BaseDatosSoap)(this)).consultarAsociadosAsync(inValue);
         }
     }
 }

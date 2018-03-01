@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsdl:types>
     <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
       <s:element name="HelloWorld">
@@ -15,9 +15,7 @@
       <s:element name="InsertarCuerpo">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="descubridor" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="archivo" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="datos" type="s:string" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -65,9 +63,7 @@
       <s:element name="InsertarAsociados">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="idCuerpo" type="s:int" />
-            <s:element minOccurs="1" maxOccurs="1" name="idAsociado" type="s:int" />
-            <s:element minOccurs="1" maxOccurs="1" name="idtipo" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="datos" type="s:string" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -85,6 +81,16 @@
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="0" maxOccurs="1" name="consultarTotalCuerposResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="consultarAsociados">
+        <s:complexType />
+      </s:element>
+      <s:element name="consultarAsociadosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="consultarAsociadosResult" type="s:string" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -132,6 +138,12 @@
   <wsdl:message name="consultarTotalCuerposSoapOut">
     <wsdl:part name="parameters" element="tns:consultarTotalCuerposResponse" />
   </wsdl:message>
+  <wsdl:message name="consultarAsociadosSoapIn">
+    <wsdl:part name="parameters" element="tns:consultarAsociados" />
+  </wsdl:message>
+  <wsdl:message name="consultarAsociadosSoapOut">
+    <wsdl:part name="parameters" element="tns:consultarAsociadosResponse" />
+  </wsdl:message>
   <wsdl:portType name="BaseDatosSoap">
     <wsdl:operation name="HelloWorld">
       <wsdl:input message="tns:HelloWorldSoapIn" />
@@ -160,6 +172,10 @@
     <wsdl:operation name="consultarTotalCuerpos">
       <wsdl:input message="tns:consultarTotalCuerposSoapIn" />
       <wsdl:output message="tns:consultarTotalCuerposSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarAsociados">
+      <wsdl:input message="tns:consultarAsociadosSoapIn" />
+      <wsdl:output message="tns:consultarAsociadosSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BaseDatosSoap" type="tns:BaseDatosSoap">
@@ -220,6 +236,15 @@
     </wsdl:operation>
     <wsdl:operation name="consultarTotalCuerpos">
       <soap:operation soapAction="http://tempuri.org/consultarTotalCuerpos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarAsociados">
+      <soap:operation soapAction="http://tempuri.org/consultarAsociados" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -293,13 +318,22 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="consultarAsociados">
+      <soap12:operation soapAction="http://tempuri.org/consultarAsociados" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:service name="BaseDatos">
     <wsdl:port name="BaseDatosSoap" binding="tns:BaseDatosSoap">
-      <soap:address location="http://localhost:64589/BaseDatos.asmx" />
+      <soap:address location="http://192.168.56.1:8089/BaseDatos.asmx" />
     </wsdl:port>
     <wsdl:port name="BaseDatosSoap12" binding="tns:BaseDatosSoap12">
-      <soap12:address location="http://localhost:64589/BaseDatos.asmx" />
+      <soap12:address location="http://192.168.56.1:8089/BaseDatos.asmx" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

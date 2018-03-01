@@ -156,15 +156,15 @@ namespace Astronomia.SRNegocio {
         public string descubridor;
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
-        public byte[] archivos;
+        public string archivo;
         
         public CuerpoCelesteRequestBody() {
         }
         
-        public CuerpoCelesteRequestBody(string nombre, string descubridor, byte[] archivos) {
+        public CuerpoCelesteRequestBody(string nombre, string descubridor, string archivo) {
             this.nombre = nombre;
             this.descubridor = descubridor;
-            this.archivos = archivos;
+            this.archivo = archivo;
         }
     }
     
@@ -622,12 +622,12 @@ namespace Astronomia.SRNegocio {
             return base.Channel.CuerpoCeleste(request);
         }
         
-        public string CuerpoCeleste(string nombre, string descubridor, byte[] archivos) {
+        public string CuerpoCeleste(string nombre, string descubridor, string archivo) {
             Astronomia.SRNegocio.CuerpoCelesteRequest inValue = new Astronomia.SRNegocio.CuerpoCelesteRequest();
             inValue.Body = new Astronomia.SRNegocio.CuerpoCelesteRequestBody();
             inValue.Body.nombre = nombre;
             inValue.Body.descubridor = descubridor;
-            inValue.Body.archivos = archivos;
+            inValue.Body.archivo = archivo;
             Astronomia.SRNegocio.CuerpoCelesteResponse retVal = ((Astronomia.SRNegocio.NegociosSoap)(this)).CuerpoCeleste(inValue);
             return retVal.Body.CuerpoCelesteResult;
         }
@@ -637,12 +637,12 @@ namespace Astronomia.SRNegocio {
             return base.Channel.CuerpoCelesteAsync(request);
         }
         
-        public System.Threading.Tasks.Task<Astronomia.SRNegocio.CuerpoCelesteResponse> CuerpoCelesteAsync(string nombre, string descubridor, byte[] archivos) {
+        public System.Threading.Tasks.Task<Astronomia.SRNegocio.CuerpoCelesteResponse> CuerpoCelesteAsync(string nombre, string descubridor, string archivo) {
             Astronomia.SRNegocio.CuerpoCelesteRequest inValue = new Astronomia.SRNegocio.CuerpoCelesteRequest();
             inValue.Body = new Astronomia.SRNegocio.CuerpoCelesteRequestBody();
             inValue.Body.nombre = nombre;
             inValue.Body.descubridor = descubridor;
-            inValue.Body.archivos = archivos;
+            inValue.Body.archivo = archivo;
             return ((Astronomia.SRNegocio.NegociosSoap)(this)).CuerpoCelesteAsync(inValue);
         }
         

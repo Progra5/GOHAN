@@ -1,4 +1,5 @@
 ﻿
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -6,6 +7,7 @@ using System.Data.SqlClient;
 using System.IO;
 using System.Linq;
 using System.Runtime.Serialization.Formatters.Binary;
+using System.Text;
 using System.Web;
 using System.Web.Services;
 
@@ -32,22 +34,22 @@ namespace WSBaseDatos
         }
 
         [WebMethod]
-        public string InsertarCuerpo(string nombre, string descubridor, byte[] archivo)
+        public string InsertarCuerpo(string datos)
         {
             try //protejemos la consulta
             {
+                DataTable dt = (DataTable)JsonConvert.DeserializeObject(datos, (typeof(DataTable)));
+
                 using (SqlConnection cn = new SqlConnection(Conexion))
                 {
                     cn.Open();
-<<<<<<< HEAD
+
                     SqlCommand cmd = new SqlCommand("INRCUE", cn);
-=======
-                    SqlCommand cmd = new SqlCommand("INSCUE", cn);
->>>>>>> 4af0dbc78b958ad9033bc73576daddfe81805790
+
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@_Nombre", nombre);
-                    cmd.Parameters.AddWithValue("@_Descubridor", descubridor);
-                    cmd.Parameters.AddWithValue("@_FOTOGRAFIA", archivo);
+                    cmd.Parameters.AddWithValue("@_Nombre", dt.Rows[0][0].ToString());
+                    cmd.Parameters.AddWithValue("@_Descubridor", dt.Rows[0][1].ToString());
+                    cmd.Parameters.AddWithValue("@_FOTOGRAFIA", Encoding.UTF8.GetBytes( dt.Rows[0][2].ToString()));
                     cmd.ExecuteNonQuery();
                     cn.Close();
                 }
@@ -66,12 +68,14 @@ namespace WSBaseDatos
         {
             try //protejemos la consulta
             {
+                DataTable dt = (DataTable)JsonConvert.DeserializeObject(descripcion, (typeof(DataTable)));
+
                 using (SqlConnection cn = new SqlConnection(Conexion))
                 {
                     cn.Open();
                     SqlCommand cmd = new SqlCommand("INSTIP", cn);
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@DESCRIPCION", descripcion);
+                    cmd.Parameters.AddWithValue("@DESCRIPCION", dt.Rows[0][0].ToString());
                     cmd.ExecuteNonQuery();
                     cn.Close();
                 }
@@ -139,18 +143,21 @@ namespace WSBaseDatos
         }
 
         [WebMethod]
-        public string InsertarAsociados(int idCuerpo, int idAsociado, int idtipo)
+        public string InsertarAsociados(string datos)
         {
             try //protejemos la consulta
             {
+
+                DataTable dt = (DataTable)JsonConvert.DeserializeObject(datos, (typeof(DataTable)));
+
                 using (SqlConnection cn = new SqlConnection(Conexion))
                 {
                     cn.Open();
                     SqlCommand cmd = new SqlCommand("INSASO", cn);
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@ID_CUERPO", idCuerpo);
-                    cmd.Parameters.AddWithValue("@ID_ASOCIADO", idAsociado);
-                    cmd.Parameters.AddWithValue("@ID_TIPO", idtipo);
+                    cmd.Parameters.AddWithValue("@ID_CUERPO", Convert.ToInt32(dt.Rows[0][0].ToString()));
+                    cmd.Parameters.AddWithValue("@ID_ASOCIADO", Convert.ToInt32(dt.Rows[0][1].ToString()));
+                    cmd.Parameters.AddWithValue("@ID_TIPO", Convert.ToInt32(dt.Rows[0][2].ToString()));
                     cmd.ExecuteNonQuery();
                     cn.Close();
                 }
@@ -190,5 +197,30 @@ namespace WSBaseDatos
             }
         }
 
+        [WebMethod]
+        public string consultarAsociados()
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                using (cn = new SqlConnection(Conexion))
+                {
+                    cn.Open();
+                    SqlCommand cmd = new SqlCommand("SELASO", cn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    da.Fill(dt);
+                    cn.Close();
+                    string txt = Newtonsoft.Json.JsonConvert.SerializeObject(dt);
+
+                    return txt;
+                }
+            }
+            catch (Exception ex)
+            {
+                cn.Close();
+                return "";
+            }
+        }
     }
 }

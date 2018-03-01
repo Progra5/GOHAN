@@ -19,7 +19,7 @@ namespace WSNegocio.SRBaseDatos {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/HelloWorld", ReplyAction="*")]
         WSNegocio.SRBaseDatos.HelloWorldResponse HelloWorld(WSNegocio.SRBaseDatos.HelloWorldRequest request);
         
-        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento nombre del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento datos del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/InsertarCuerpo", ReplyAction="*")]
         WSNegocio.SRBaseDatos.InsertarCuerpoResponse InsertarCuerpo(WSNegocio.SRBaseDatos.InsertarCuerpoRequest request);
         
@@ -35,13 +35,17 @@ namespace WSNegocio.SRBaseDatos {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/consultarTipos", ReplyAction="*")]
         WSNegocio.SRBaseDatos.consultarTiposResponse consultarTipos(WSNegocio.SRBaseDatos.consultarTiposRequest request);
         
-        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento InsertarAsociadosResult del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento datos del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/InsertarAsociados", ReplyAction="*")]
         WSNegocio.SRBaseDatos.InsertarAsociadosResponse InsertarAsociados(WSNegocio.SRBaseDatos.InsertarAsociadosRequest request);
         
         // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento consultarTotalCuerposResult del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/consultarTotalCuerpos", ReplyAction="*")]
         WSNegocio.SRBaseDatos.consultarTotalCuerposResponse consultarTotalCuerpos(WSNegocio.SRBaseDatos.consultarTotalCuerposRequest request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento consultarAsociadosResult del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/consultarAsociados", ReplyAction="*")]
+        WSNegocio.SRBaseDatos.consultarAsociadosResponse consultarAsociados(WSNegocio.SRBaseDatos.consultarAsociadosRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -129,21 +133,13 @@ namespace WSNegocio.SRBaseDatos {
     public partial class InsertarCuerpoRequestBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public string nombre;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
-        public string descubridor;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
-        public byte[] archivo;
+        public string datos;
         
         public InsertarCuerpoRequestBody() {
         }
         
-        public InsertarCuerpoRequestBody(string nombre, string descubridor, byte[] archivo) {
-            this.nombre = nombre;
-            this.descubridor = descubridor;
-            this.archivo = archivo;
+        public InsertarCuerpoRequestBody(string datos) {
+            this.datos = datos;
         }
     }
     
@@ -394,22 +390,14 @@ namespace WSNegocio.SRBaseDatos {
     [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
     public partial class InsertarAsociadosRequestBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
-        public int idCuerpo;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
-        public int idAsociado;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
-        public int idtipo;
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string datos;
         
         public InsertarAsociadosRequestBody() {
         }
         
-        public InsertarAsociadosRequestBody(int idCuerpo, int idAsociado, int idtipo) {
-            this.idCuerpo = idCuerpo;
-            this.idAsociado = idAsociado;
-            this.idtipo = idtipo;
+        public InsertarAsociadosRequestBody(string datos) {
+            this.datos = datos;
         }
     }
     
@@ -508,6 +496,67 @@ namespace WSNegocio.SRBaseDatos {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class consultarAsociadosRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="consultarAsociados", Namespace="http://tempuri.org/", Order=0)]
+        public WSNegocio.SRBaseDatos.consultarAsociadosRequestBody Body;
+        
+        public consultarAsociadosRequest() {
+        }
+        
+        public consultarAsociadosRequest(WSNegocio.SRBaseDatos.consultarAsociadosRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class consultarAsociadosRequestBody {
+        
+        public consultarAsociadosRequestBody() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class consultarAsociadosResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="consultarAsociadosResponse", Namespace="http://tempuri.org/", Order=0)]
+        public WSNegocio.SRBaseDatos.consultarAsociadosResponseBody Body;
+        
+        public consultarAsociadosResponse() {
+        }
+        
+        public consultarAsociadosResponse(WSNegocio.SRBaseDatos.consultarAsociadosResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class consultarAsociadosResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string consultarAsociadosResult;
+        
+        public consultarAsociadosResponseBody() {
+        }
+        
+        public consultarAsociadosResponseBody(string consultarAsociadosResult) {
+            this.consultarAsociadosResult = consultarAsociadosResult;
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface BaseDatosSoapChannel : WSNegocio.SRBaseDatos.BaseDatosSoap, System.ServiceModel.IClientChannel {
     }
@@ -552,12 +601,10 @@ namespace WSNegocio.SRBaseDatos {
             return base.Channel.InsertarCuerpo(request);
         }
         
-        public string InsertarCuerpo(string nombre, string descubridor, byte[] archivo) {
+        public string InsertarCuerpo(string datos) {
             WSNegocio.SRBaseDatos.InsertarCuerpoRequest inValue = new WSNegocio.SRBaseDatos.InsertarCuerpoRequest();
             inValue.Body = new WSNegocio.SRBaseDatos.InsertarCuerpoRequestBody();
-            inValue.Body.nombre = nombre;
-            inValue.Body.descubridor = descubridor;
-            inValue.Body.archivo = archivo;
+            inValue.Body.datos = datos;
             WSNegocio.SRBaseDatos.InsertarCuerpoResponse retVal = ((WSNegocio.SRBaseDatos.BaseDatosSoap)(this)).InsertarCuerpo(inValue);
             return retVal.Body.InsertarCuerpoResult;
         }
@@ -604,12 +651,10 @@ namespace WSNegocio.SRBaseDatos {
             return base.Channel.InsertarAsociados(request);
         }
         
-        public string InsertarAsociados(int idCuerpo, int idAsociado, int idtipo) {
+        public string InsertarAsociados(string datos) {
             WSNegocio.SRBaseDatos.InsertarAsociadosRequest inValue = new WSNegocio.SRBaseDatos.InsertarAsociadosRequest();
             inValue.Body = new WSNegocio.SRBaseDatos.InsertarAsociadosRequestBody();
-            inValue.Body.idCuerpo = idCuerpo;
-            inValue.Body.idAsociado = idAsociado;
-            inValue.Body.idtipo = idtipo;
+            inValue.Body.datos = datos;
             WSNegocio.SRBaseDatos.InsertarAsociadosResponse retVal = ((WSNegocio.SRBaseDatos.BaseDatosSoap)(this)).InsertarAsociados(inValue);
             return retVal.Body.InsertarAsociadosResult;
         }
@@ -624,6 +669,18 @@ namespace WSNegocio.SRBaseDatos {
             inValue.Body = new WSNegocio.SRBaseDatos.consultarTotalCuerposRequestBody();
             WSNegocio.SRBaseDatos.consultarTotalCuerposResponse retVal = ((WSNegocio.SRBaseDatos.BaseDatosSoap)(this)).consultarTotalCuerpos(inValue);
             return retVal.Body.consultarTotalCuerposResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        WSNegocio.SRBaseDatos.consultarAsociadosResponse WSNegocio.SRBaseDatos.BaseDatosSoap.consultarAsociados(WSNegocio.SRBaseDatos.consultarAsociadosRequest request) {
+            return base.Channel.consultarAsociados(request);
+        }
+        
+        public string consultarAsociados() {
+            WSNegocio.SRBaseDatos.consultarAsociadosRequest inValue = new WSNegocio.SRBaseDatos.consultarAsociadosRequest();
+            inValue.Body = new WSNegocio.SRBaseDatos.consultarAsociadosRequestBody();
+            WSNegocio.SRBaseDatos.consultarAsociadosResponse retVal = ((WSNegocio.SRBaseDatos.BaseDatosSoap)(this)).consultarAsociados(inValue);
+            return retVal.Body.consultarAsociadosResult;
         }
     }
 }

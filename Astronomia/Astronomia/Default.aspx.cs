@@ -50,10 +50,11 @@ namespace Astronomia
                 {
                     string nombre = fileUploader1.FileName;
 
-                    string salida = WSNegocios.CuerpoCeleste(txtnombre.Text, txtDescubridor.Text, Encoding.UTF8.GetBytes(nombre));
+                    string salida = WSNegocios.CuerpoCeleste(txtnombre.Text, txtDescubridor.Text, nombre);
 
                     Label1.Text = salida;
                     actualizar();
+                    actualizar2();
                 }
             }
             catch (Exception ex)
@@ -159,11 +160,16 @@ namespace Astronomia
 
                 DataTable dt2 = (DataTable)JsonConvert.DeserializeObject(txt2, (typeof(DataTable)));
 
+                string txt3 = WSBaseDatos.consultarAsociados();
+
+                DataTable dt3= (DataTable)JsonConvert.DeserializeObject(txt3, (typeof(DataTable)));
+
                 PlaceHolder1.Controls.Clear();
-                PlaceHolder1.Controls.Clear();
-                PlaceHolder1.Controls.Clear();
+                PlaceHolder2.Controls.Clear();
+                PlaceHolder3.Controls.Clear();
+
                 PlaceHolder1.Controls.Add(new Literal { Text = ct.crear(dt2).ToString() });//tipo relacion
-                //PlaceHolder2.Controls.Add(new Literal { Text = WSNegocios.crearTablaTipos().ToString() }); // asociados
+                PlaceHolder2.Controls.Add(new Literal { Text = ct.crear(dt3).ToString() });// asociados
                 PlaceHolder3.Controls.Add(new Literal { Text = ct.crear(dt).ToString() });//cuerpos celestes
 
             }

@@ -64,6 +64,7 @@
             <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="Asociar cuerpos" Height="45px" style="margin-left: 0px; margin-right: 10px" Width="250px" Font-Bold="True" BackColor="Black" BorderStyle="None" Font-Size="10pt" ForeColor="White" />
             <asp:Button ID="Button3" runat="server" OnClick="Button3_Click" Text="Insertar tipos asosiación" Height="45px" Width="250px" Font-Bold="True" BackColor="Black" BorderStyle="None" Font-Size="10pt" ForeColor="White" />
         
+
             <asp:MultiView runat="server" ID="MultiView1" ActiveViewIndex="0">
                 <asp:View ID="View1" runat="server">
                     <div class="col-sm-12">
@@ -73,7 +74,7 @@
                             Registro de cuerpos celestes
                         </h3>
                         <div><p><br /></p></div>
-                        <table style="margin-left: 600px">
+                        <table style="margin-left: 33%">
                             <tr>
                                 <td align="right" class="auto-style18">Nombre: </td>
                                 <td class="auto-style4" align="left">
@@ -112,7 +113,7 @@
                         <br />
                         <br />
                         <br />
-                    <asp:Panel ID="Panel1" runat="server" Height="1000px" ScrollBars="Vertical" HorizontalAlign="Center">
+                    <asp:Panel ID="Panel1" runat="server" Height="300px" ScrollBars="Vertical" HorizontalAlign="Center">
                         <asp:PlaceHolder ID="PlaceHolder3" runat="server"></asp:PlaceHolder>
                     </asp:Panel>
                         </div>
@@ -125,7 +126,7 @@
                             <h3 class="header blue lighter smaller">Asociar cuerpos celestes </h3>
                         <p class="header blue lighter smaller">
                             &nbsp;</p>
-                            <table style="margin-left: 600px">
+                            <table style="margin-left: 35%">
                                 <tr>
                                     <td align="right" class="auto-style16">Cuerpos celestes</td>
                                     <td class="auto-style6">
@@ -155,12 +156,18 @@
                                         <br />
                                         <asp:Label ID="Label3" runat="server" Text="Estado"></asp:Label>
                                         <br />
-                                        <asp:Button ID="btnAsociar" runat="server" Text="Asociar" OnClick="btnAsociar_Click" /></td>
+                                        <asp:Button ID="btnAsociar" runat="server" Text="Asociar" OnClick="btnAsociar_Click" />
+                                        <br />
+                                        <br />
+                                        <br />
+                                        <br />
+                                    </td>
                                 </tr>
                             </table>
                         </div>
                     <div class="col-sm-12">
-                    <asp:Panel ID="Panel2" runat="server" Height="500px" ScrollBars="Vertical" HorizontalAlign="Center">
+                    <asp:Panel ID="Panel2" runat="server" Height="300px" ScrollBars="Vertical" HorizontalAlign="Center">
+                        
                         <asp:PlaceHolder ID="PlaceHolder2" runat="server"></asp:PlaceHolder>
                     </asp:Panel>
                         </div>
@@ -174,7 +181,7 @@
                             <h3 class="header blue lighter smaller">Insertar tipo relaci&oacute;n</h3>
                         <h3 class="header blue lighter smaller">&nbsp;</h3>
                         
-                            <table style="margin-left: 600px">
+                            <table style="margin-left: 35%">
                                 <tr>
                                     <td class="auto-style24">Insertar tipo de relaci&oacute;n</td>
                                     <td class="auto-style25"><asp:TextBox ID="txtTipoRelacion" runat="server"></asp:TextBox>
@@ -194,7 +201,7 @@
                             </table>
                         </div>
                     <div class="col-sm-12">
-                        <asp:Panel ID="Panel3" runat="server" Height="500px" ScrollBars="Vertical" HorizontalAlign="Center" >
+                        <asp:Panel ID="Panel3" runat="server" Height="300px" ScrollBars="Vertical" HorizontalAlign="Center" >
                             <asp:PlaceHolder ID="PlaceHolder1" runat="server"></asp:PlaceHolder>
                         </asp:Panel>
                         </div>

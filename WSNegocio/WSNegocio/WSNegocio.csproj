@@ -61,6 +61,7 @@
     <Content Include="Negocios.asmx" />
     <Content Include="Properties\DataSources\System.Data.DataTable.datasource" />
     <Content Include="packages.config" />
+    <None Include="Properties\PublishProfiles\progra.pubxml" />
     <None Include="Service References\SRBaseDatos\BaseDatos.disco" />
     <None Include="Service References\SRBaseDatos\configuration91.svcinfo" />
     <None Include="Service References\SRBaseDatos\configuration.svcinfo" />
