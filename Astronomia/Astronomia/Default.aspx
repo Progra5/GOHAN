@@ -103,7 +103,7 @@
                                         Text="Guargar" OnClick="cargarImagenes_Click" style="margin-left: 93px" />
                                     <br />
                                     <br />
-                                    <asp:Label ID="Label2" runat="server" Text="Label"></asp:Label>
+                                    <asp:Label ID="Label2" runat="server" Text=""></asp:Label>
                                 </td>
                             </tr>
                         </table>
