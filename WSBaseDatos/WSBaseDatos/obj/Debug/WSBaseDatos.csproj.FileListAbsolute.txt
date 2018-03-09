@@ -47,3 +47,11 @@ C:\Users\progra\Desktop\GOHAN\GOHAN\WSBaseDatos\WSBaseDatos\bin\Newtonsoft.Json.
 C:\Users\progra\Desktop\GOHAN\GOHAN\WSBaseDatos\WSBaseDatos\obj\Debug\WSBaseDatos.csprojResolveAssemblyReference.cache
 C:\Users\progra\Desktop\GOHAN\GOHAN\WSBaseDatos\WSBaseDatos\obj\Debug\WSBaseDatos.dll
 C:\Users\progra\Desktop\GOHAN\GOHAN\WSBaseDatos\WSBaseDatos\obj\Debug\WSBaseDatos.pdb
+C:\Users\progra\Desktop\Sitios Web\GOHAN\GOHAN\WSBaseDatos\WSBaseDatos\bin\WSBaseDatos.dll.config
+C:\Users\progra\Desktop\Sitios Web\GOHAN\GOHAN\WSBaseDatos\WSBaseDatos\bin\WSBaseDatos.dll
+C:\Users\progra\Desktop\Sitios Web\GOHAN\GOHAN\WSBaseDatos\WSBaseDatos\bin\WSBaseDatos.pdb
+C:\Users\progra\Desktop\Sitios Web\GOHAN\GOHAN\WSBaseDatos\WSBaseDatos\bin\Newtonsoft.Json.dll
+C:\Users\progra\Desktop\Sitios Web\GOHAN\GOHAN\WSBaseDatos\WSBaseDatos\bin\Newtonsoft.Json.xml
+C:\Users\progra\Desktop\Sitios Web\GOHAN\GOHAN\WSBaseDatos\WSBaseDatos\obj\Debug\WSBaseDatos.csprojResolveAssemblyReference.cache
+C:\Users\progra\Desktop\Sitios Web\GOHAN\GOHAN\WSBaseDatos\WSBaseDatos\obj\Debug\WSBaseDatos.dll
+C:\Users\progra\Desktop\Sitios Web\GOHAN\GOHAN\WSBaseDatos\WSBaseDatos\obj\Debug\WSBaseDatos.pdb

@@ -23,7 +23,7 @@ namespace WSBaseDatos
     // [System.Web.Script.Services.ScriptService]
     public class BaseDatos : System.Web.Services.WebService
     {
-        public static string Conexion = @"workstation id=Androide17.mssql.somee.com;packet size=4096;user id=alex207_SQLLogin_1;pwd=lif58eecxe;data source=Androide17.mssql.somee.com;persist security info=False;initial catalog=Androide17";
+        public static string Conexion = @"Data Source=ALEX\PROGRA;Initial Catalog=Androide17;User ID=sa;Password=progra";
         SqlConnection cn = new SqlConnection(Conexion);
         SqlCommand comando = new SqlCommand();
 
